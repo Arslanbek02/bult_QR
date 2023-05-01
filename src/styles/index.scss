@@ -61,15 +61,17 @@ body, html {
     height: 100vh;
     font-family: 'Inter';
     font-weight: 400;
+    font-size: 14px;
     padding: 0;
     margin: 0;
 }
 
 .wrapper {
-    margin: 0 8px;
-    width: 95%;
+    min-height: 100vh;  
+    padding: 0 8px;
+    width: 100%;
 
-    &-filter{
+    &-grey{
         background-color: $bg-grey;
         margin: 0;
         padding: 10px;
@@ -85,6 +87,7 @@ body, html {
     .header__container {
         display: flex;
         align-items: center;
+        justify-content: space-between;
 
         .header__right-icon {
             margin-left: 60px;
@@ -94,6 +97,8 @@ body, html {
         display: flex;
         text-align: flex-start;
         flex-direction: column;
+
+        padding-top: 10px;
 
             .adress__title {
                 font-size: 10px;
@@ -143,20 +148,25 @@ body, html {
 }
 
 .btn__top {
-    display: inline-flex;
+    display: flex;
+    justify-content: space-between;
     border-radius: 15px;
     border: 1px solid $light-grey;
     font-size: 16px;
     margin-bottom: 15px;
     margin-left: 20px;
+    
 
     &-left {
         flex:1;
         border: none;
+        font-size: 16px;
+        width: 100%;
     }
     &-right {
         flex:1;
         border: none;
+        font-size: 16px;
     }
 
 }
@@ -167,12 +177,12 @@ body, html {
     border-radius: 15px;
 }
 .active-info {
-    color: #000;
-    border-bottom: 1px solid #000;
-    border-radius: none ;
+    color: #000 !important;
+    border-bottom: 1px solid #000!important;
+    border-radius: none!important ;
 }
 
-.active-filter{
+.active-select{
     background-color: #fff;
     color: $blue;
     border-radius: 15px;
@@ -197,13 +207,15 @@ body, html {
         }    
     }
 }
+
+
 // Title
 
 .row__title {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-left:5px;
+    margin-left: 5px;
     width: 100%;
 
     .show__more {
@@ -230,58 +242,71 @@ body, html {
 
     .swiper-slide {
         width: auto;
-        height: 200px;
 
 
-        .card {
-        position: relative;
-        border-radius: 10px;
-        margin-bottom: 30px;
+    a {
+        position: absolute;
+        left: 80%;
+        top: 5%;
+    }
 
-        a {
-            position: absolute;
-            left: 80%;
-            top: 5%;
-        }
-
-        img {
-            width: 100%;
-            object-fit: cover;
-            border-radius: 10px 10px 0 0;
-            margin: 4px 0;
-            }
-
-        &-body {
-            padding: 1px;
-            .card-title {
-                font-size: 14px;
-                margin: 5px 0;
-
-                }
-
-            .card-text {
-                color: $grey;
-                font-size: 12px;
-                margin: 4px 0;
-            }
-
-            }
-            .rate{
-                display: flex;
-                align-items: center;
-
-                img{
-                    width: 12px;
-                }
-
-                span{
-                    font-size: 14px;
-                }
-            }
+    &-img {
+        width: 100%;
+        object-fit: cover;
+        border-radius: 10px 10px 0 0;
+        margin: 4px 0;
         }
     }
 }
 
+.rate{
+    display: flex;
+    align-items: center;
+    span{
+        font-size: 14px;
+    }
+
+    &-timer * {
+        padding-right: 5px;
+        &:first-child {
+            width: 22px;
+        }
+    }
+}
+.card {
+    padding: 1px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+
+    &-item {
+        margin: 5px 0;
+    }
+
+    &-category {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 12px 22px;
+        gap: 10px;
+        background-color: $light-grey;
+
+        font-size: 12px;
+        width: 89px;
+        height: 89px;
+    }
+    .card-title {
+        font-size: 14px;
+        margin: 5px 0;
+
+        }
+
+    .card-text {
+        color: $grey;
+        font-size: 12px;
+        margin: 4px 0;
+    }
+    
+}
 // Footer
 
 
@@ -317,12 +342,18 @@ body, html {
 .title__main {
     display: flex;
     align-items: center;
+    justify-content: space-between;
 
-    &-filter, &-feedback{
+    &-center{
         display: flex;
         align-items: center;
         justify-content: space-between;
-        margin: 15px 10px;
+        margin: 20px 10px;
+
+        p {
+            font-size: 16px;
+
+        }
 
         a{
             font-size: 10px;
@@ -418,17 +449,9 @@ body, html {
     }
 
     .restaurant__common {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        border-bottom: 1px solid $grey;
-        border-radius: none;
-        font-size: 14px;
-
-        .restaurant__common-inner{
-            color: $grey;
-            border: none;
-            
+        
+        .categories-item {
+            width: 100%;
         }
     }
 
@@ -482,9 +505,6 @@ body, html {
     &:last-child{
         border-bottom: none;
         padding-bottom: 10px;
-    }
-    &-logo {
-
     }
 
     &-description {
@@ -613,7 +633,7 @@ body, html {
 // Feedback
 .feedback-title {
     font-size: 14px;
-    margin: 10px 5px;
+    padding: 10px 5px;
 }
 
 .comment {
@@ -791,3 +811,62 @@ body, html {
     }
 }
 
+// Order food
+
+.categories-catalog {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 0px;
+    border-bottom: 1px solid $grey;
+    margin: 15px 0;
+
+    &-order {
+        gap: 46px;
+    }
+}
+.categories-item {
+    font-size: 14px;
+    color: $grey;
+    padding-bottom: 5px;
+    
+    text-align: center;
+}
+
+.order__row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    margin: 15px 0;
+
+    .food__card {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+
+        .card-body {
+
+            .card_title {
+                margin: 5px 0;
+            }
+            margin: 5px;
+        }
+
+        .food__img-container {
+            
+            img {
+                width: 145px;
+                height: 130px;
+                object-fit: cover;
+
+                border-radius: 15px;
+            }
+        }
+    }
+
+}
+
+// Categories

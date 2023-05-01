@@ -24,7 +24,7 @@ activeLinks.forEach(activeLink => {
     });
 });
 
-const activeInfos = document.querySelectorAll('.restaurant__common-inner');
+const activeInfos = document.querySelectorAll('.active-category');
 
 activeInfos.forEach(activeInfo => {
     activeInfo.addEventListener('click', () => {
@@ -33,21 +33,12 @@ activeInfos.forEach(activeInfo => {
     });
 });
 
-const activeFilters = document.querySelectorAll('.btn__filter-inner');
+const activeFilters = document.querySelectorAll('.btn__select');
 
 activeFilters.forEach(activeFilter => {
     activeFilter.addEventListener('click', () => {
-        document.querySelector('.active-filter')?.classList.remove('active-filter');
-        activeFilter.classList.add('active-filter');
-    });
-});
-
-const activeMenus = document.querySelectorAll('.btn__menu-inner');
-
-activeMenus.forEach(activeMenu => {
-    activeMenu.addEventListener('click', () => {
-        document.querySelector('.active')?.classList.remove('active');
-        activeMenu.classList.add('active');
+        document.querySelector('.active-select')?.classList.remove('active-select');
+        activeFilter.classList.add('active-select');
     });
 });
 
@@ -69,7 +60,6 @@ let swiper_restaurant = new Swiper('.swiper-container-restaurant', {
     slidesPerView: 'auto',
     spaceBetween: 10,
     loop: true,
-    zIndex: -1,
     pagination: {
         el: '.swiper-pagination',
         clickable: true,
