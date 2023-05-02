@@ -58,7 +58,6 @@ let swiper = new Swiper('.swiper-container', {
 
 let swiper_restaurant = new Swiper('.swiper-container-restaurant', {
     slidesPerView: 'auto',
-    spaceBetween: 10,
     loop: true,
     pagination: {
         el: '.swiper-pagination',

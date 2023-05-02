@@ -67,7 +67,7 @@ body, html {
 }
 
 .wrapper {
-    min-height: 100vh;  
+    min-height: 91%;  
     padding: 0 8px;
     width: 100%;
 
@@ -146,6 +146,11 @@ body, html {
     position: fixed;
     bottom: 42px;
 }
+.btn-small {
+    padding-top: 6px;
+    padding-bottom: 6px;
+    margin: 0;
+}
 
 .btn__top {
     display: flex;
@@ -153,20 +158,21 @@ body, html {
     border-radius: 15px;
     border: 1px solid $light-grey;
     font-size: 16px;
-    margin-bottom: 15px;
-    margin-left: 20px;
-    
+    margin-bottom: 25px;
 
+    position: relative;
+    a {
+        flex-grow: 1;
+    }
     &-left {
-        flex:1;
         border: none;
         font-size: 16px;
         width: 100%;
     }
     &-right {
-        flex:1;
         border: none;
         font-size: 16px;
+        width: 100%;
     }
 
 }
@@ -294,18 +300,18 @@ body, html {
         width: 89px;
         height: 89px;
     }
-    .card-title {
-        font-size: 14px;
-        margin: 5px 0;
-
-        }
-
-    .card-text {
-        color: $grey;
-        font-size: 12px;
-        margin: 4px 0;
-    }
     
+}
+.card-title {
+    font-size: 14px;
+    margin: 5px 0;
+
+    }
+
+.card-text {
+    color: $grey;
+    font-size: 12px;
+    margin: 4px 0;
 }
 // Footer
 
@@ -432,11 +438,11 @@ body, html {
 
 //Restaurant info
 
-
 .restaurant {
     &-container {
         display: flex;
-        flex-direction: column;    
+        flex-direction: column;
+        margin-bottom: 30px;
     }
     .restaurant-container {
         margin-top: 15px;
@@ -449,6 +455,9 @@ body, html {
     }
 
     .restaurant__common {
+        display: flex;
+        border-bottom: 1px solid $grey;
+        margin: 10px 0;
         
         .categories-item {
             width: 100%;
@@ -488,10 +497,7 @@ body, html {
     }
 }
 
-.menu-title {
-    font-size: 16px;
-    font-weight: 400;
-}
+
 
 // Restaurant feedback
 
@@ -683,32 +689,32 @@ body, html {
 }
 
 
-.booking-menu {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: $blue;
-    color: #fff;
-    border-radius: 20px;
-    cursor: pointer;
-    
-    p, a {
-        padding: 15px;
-        font-size: 14px;
+    .booking-menu {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: $blue;
+        color: #fff;
+        border-radius: 20px;
+        cursor: pointer;
+        
+        p, a {
+            padding: 15px;
+            font-size: 14px;
+        }
     }
-}
-.checkbox {
-    display: flex;
-    align-items: center;
-    margin: 10px 0;
-    font-size: 12px;
-    
-    #order {
-        width: 20px;
-        height: 20px;
-        margin: 5px;
-    }
-}   
+    .checkbox {
+        display: flex;
+        align-items: center;
+        margin: 10px 0;
+        font-size: 12px;
+        
+        #order {
+            width: 20px;
+            height: 20px;
+            margin: 5px;
+        }
+    }   
 
 // Booking success
 
@@ -755,11 +761,7 @@ body, html {
     }
 }
 
-.menu-title {
-    font-size: 14px;
-    font-weight: 500;
-    margin-bottom: 15px;
-}
+
 
 .menu {
     margin-bottom: 25px;
@@ -809,6 +811,17 @@ body, html {
             }
         }
     }
+}
+
+.menu__head {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.menu-title{
+    font-size: 14px;
+    font-weight: 500;
+    margin: 15px 0;
 }
 
 // Order food
@@ -870,3 +883,47 @@ body, html {
 }
 
 // Categories
+
+// Favorites
+
+.favorite {
+
+    .favorite__card {
+        display: flex;
+        position: relative;
+        background-color: $bg-grey;
+        border-radius: 20px;
+        padding: 10px;
+        margin-bottom: 10px;
+        
+
+        a {
+            position: absolute;
+            left: 7%;
+            top: 13%;
+
+        }
+
+        .img-container {
+            width: 135px;
+            height: 103px;
+
+            img {
+                width: 135px;
+                height: 103px;
+                object-fit: cover;
+                border-radius: 15px;
+            }
+        }
+    }
+    
+    .favorite__info {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-left: 10px;
+        &-inner{
+            margin-bottom: 5px;
+        }
+    }
+}
